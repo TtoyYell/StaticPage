@@ -1,10 +1,21 @@
 /**
- * 
+ * 封装ajax
  * @param  url 请求url
- * @param  callback 回调函数
  */
-function myAjax(url, callback) {
-    new Promise(function(){
-        
+function myAjax(url) {
+
+    return new Promise(function(resolve,reject) {
+        var xhr = XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4){
+                if (this.status == 200) {
+                    resolve(this.responseText)
+                } else {
+                    reject(new Error());
+                }
+            }   
+        }
+        xhr.open('get', url)
+        xhr.send();
     })
 }

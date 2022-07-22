@@ -4,9 +4,14 @@
 
 <p id="demo"></p>
 
+<script src="./ajax.js"></script
 <script>
-document.getElementById("demo").innerHTML = myAjax();
+    async function send(){
+        var d1 = await myAjax("")
+        console.log(d1)
+    }
 
+document.getElementById("demo").innerHTML = myAjax();
 </script>
 
 </body>
