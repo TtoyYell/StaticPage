@@ -1,5 +1,5 @@
 /**
- * 封装ajax
+ * 封装异步ajax
  * @param  url 请求url
  */
 function myAjax(url) {
