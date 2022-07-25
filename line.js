@@ -1,5 +1,5 @@
 /**
- * 画直线
+ * 画一条直线
  * @param context 画布上下文
  * @param x1 起始坐标x
  * @param y1 起始坐标y
