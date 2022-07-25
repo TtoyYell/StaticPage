@@ -3,7 +3,6 @@
  * @param  url 请求url
  */
 function myAjax(url) {
-
     return new Promise(function(resolve,reject) {
         var xhr = XMLHttpRequest();
         xhr.onreadystatechange = function () {
