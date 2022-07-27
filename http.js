@@ -1,6 +1,5 @@
 const http = require('http')
 const fs = require('fs')
-const path = require('path')
 var url = require('url');
 
 const server = http.createServer()
@@ -21,7 +20,6 @@ server.on('request', function(req,res) {
       }else{            
          // HTTP 状态码: 200 : OK
          // Content Type: text/plain
-         console.log(postfix);
          if(postfix==='html'){
             res.writeHead(200, {'Content-Type': 'text/html'});   
          }else if(postfix==='css'){
