@@ -17,3 +17,15 @@ while ((match = patternPro.exec(str)) != null) {
     console.log(match[0]);
 }
 
+// 一个字符串： fdjkaljfdlstopfjdslafdj 。 您会看到中间有一stop 。 我替换除stop之外的其他任何单词。 尝试使用[^stop] ，但它还在字符串末尾包含s 。
+
+//解决方案
+
+//纯RegEx方法的解决方案（在我的知识中对RegEx的了解是对的。PCRE动词对我来说太高级了）。 但这需要2个步骤。 我不想混用PHP方法，因为有时作业不在编码区域内，即Total Commander中的多重命名文件名。
+
+//让我们看一下字符串： xxxfooeoropwfoo,skfhlk;afoofsjre,jhgfs,vnhufoolsjunegpq 。 例如，我想将所有foo保留在此字符​​串中，
+//并将其他所有non-foo贪婪地替换为--- 。
+
+//首先，我需要找到每个foo之间的所有非foo ： (?<=foo).+?(?=foo) 。 该字符串将变成xxxfoo---foo---foo---foolsjunegpq ，现在双方都剩下non-foo字了。
+
+//然后使用[^-]+(?=foo)|(?<=foo)[^-]+ 。 这次： ---foo---foo---foo---foo--- 。 除foo所有单词都变成了--- 。
