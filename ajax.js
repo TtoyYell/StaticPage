@@ -12,7 +12,7 @@ function myAjax(url) {
                 } else {
                     reject(new Error());
                 }
-            }   
+            }
         }
         xhr.open('get', url)
         xhr.send();

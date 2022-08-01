@@ -16,18 +16,19 @@ server.on('request', function(req,res) {
          console.log(err);
         // HTTP 状态码: 404 : NOT FOUND
          // Content Type: text/plain
-         res.writeHead(404, {'Content-Type': 'text/html; charset=utf-8'});
+         res.writeHead(404, {'Content-Type': 'text/html;charset=utf-8'});
       }else{            
          // HTTP 状态码: 200 : OK
          // Content Type: text/plain
-         if(postfix==='html'){
-            res.writeHead(200, {'Content-Type': 'text/html'});   
-         }else if(postfix==='css'){
-            res.writeHead(200, {'Content-Type': 'text/css'});
+         if(postfix==='.html'){
+            res.writeHead(200, {'Content-Type': 'text/html;charset=utf-8'});   
+         }else if(postfix==='.css'){
+            res.writeHead(200, {'Content-Type': 'text/css;charset=utf-8'});
          }
-         else if(postfix==='js'){
-            res.writeHead(200, {'Content-Type': 'application/javascript'});
+         else if(postfix==='.js'){
+            res.writeHead(200, {'Content-Type': 'application/javascript;charset=utf-8'});
          }else{
+            res.setHeader('Content-Type','text/plain;charset=utf-8');
          }
          // 响应文件内容
          res.write(data.toString());       
@@ -37,6 +38,6 @@ server.on('request', function(req,res) {
    });
 })
 
-server.listen(8111, function() {
-    console.log('http server running at port 8111')
+server.listen(80, function() {
+    console.log('http server running at port 80')
 })
