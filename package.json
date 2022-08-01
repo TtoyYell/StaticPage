@@ -14,7 +14,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "moment": "^2.29.4"
+    "moment": "^2.29.4",
+    "vue": "^3.2.37"
   },
   "devDependencies": {
     "webpack": "^5.74.0"
